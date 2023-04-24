@@ -3,12 +3,17 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+
 const mongoose = require('mongoose');
+const Book = require('./models/book.js')
 
 const app = express();
+
 app.use(cors());
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
+
+app.listen(PORT, () => console.log(`listening on ${PORT}`));
 
 mongoose.connect(process.env.DB_URL);
 
@@ -19,10 +24,30 @@ db.once('open', function () {
   console.log('Mongoose is connected');
 });
 
+app.get('/', (request, response) => {
+  response.status(200).send('Welcome!');
+});
+
 app.get('/test', (request, response) => {
-
-  response.send('test request received')
-
+  response.send('Test request received')
 })
 
-app.listen(PORT, () => console.log(`listening on ${PORT}`));
+app.get('/books', async (request, response, next) => {
+  try {
+
+    let allBooks = await Book.find({});
+
+    response.status(200).send(allBooks);
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.get('*', (request, response) => {
+  response.status(404).send('Not available');
+});
+
+app.use((error, request, response, next) => {
+  console.log(error.message);
+  response.status(500).send(error.message);
+});

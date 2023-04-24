@@ -2,7 +2,7 @@
 
 **Author**: Ike Steoger & Donna Ada
 
-**Version**: 1.0.0 - setup repo, got base code working with mongoDB
+**Version**: 1.0.0 - setup repo, got base code working with mongoDB and a Book model
 
 ## Overview
 
@@ -22,11 +22,11 @@ This application uses `cors`, `dotenv`, `express` and `mongoose`.
 
 ## Estimates
 
->Name of feature:  
->>Estimate of time needed to complete:  
->>Start time:  
->>Finish time:  
->>Actual time needed to complete:  
+>Name of feature: Storage (Book Model)  
+>>Estimate of time needed to complete: 2 hours  
+>>Start time: 1pm  
+>>Finish time: 3:30pm  
+>>Actual time needed to complete: 2.5 hours  
 
 ## Credit and Collaborations
 
