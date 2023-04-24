@@ -10,8 +10,6 @@ app.use(cors());
 
 const PORT = process.env.PORT || 3001;
 
-app.listen(PORT, () => console.log(`listening on Port ${PORT}`));
-
 mongoose.connect(process.env.DB_URL);
 
 // *** BELOW CODE FOR TROUBLESHOOTING MongoDB IN TERMINAL ***

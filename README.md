@@ -1,6 +1,7 @@
 # Can of Books App
 
 **Author**: Ike Steoger & Donna Ada
+
 **Version**: 1.0.0 - setup repo, got base code working with mongoDB
 
 ## Overview
