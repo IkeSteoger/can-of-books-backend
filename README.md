@@ -28,6 +28,12 @@ This application uses `cors`, `dotenv`, `express` and `mongoose`.
 >>Finish time: 3:30pm  
 >>Actual time needed to complete: 2.5 hours  
 
+>Name of feature: Create/Delete (Book Model)
+>>Estimate of time needed to complete: 2 hours  
+>>Start time: 12pm  
+>>Finish time: 1pm  
+>>Actual time needed to complete: 1 hour 
+
 ## Credit and Collaborations
 
 - [Michael "Ike" Steoger](https://github.com/IkeSteoger)  
