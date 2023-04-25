@@ -10,6 +10,7 @@ const Book = require('./models/book.js')
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
 const PORT = process.env.PORT || 3002;
 
@@ -42,6 +43,20 @@ app.get('/books', async (request, response, next) => {
     next(error);
   }
 });
+
+app.post('/books', postBook);
+
+async function postBook(req, res, next) {
+  try {
+    let bookData = req.body;
+    let createdBook = await Book.create(bookData);
+    console.log(`${bookData} created`);
+    res.status(201).send(createdBook);
+  } catch (error) {
+    next(error);
+  }
+
+}
 
 app.get('*', (request, response) => {
   response.status(404).send('Not available');
