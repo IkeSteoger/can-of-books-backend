@@ -5,12 +5,12 @@ const mongoose = require('mongoose');
 
 mongoose.connect(process.env.DB_URL);
 
-const Book = require('./models/cat');
+const Book = require('./models/book');
 
 async function clear() {
   try {
     await Book.deleteMany({});
-    console.log('books cleared from DB');
+    console.log('Books cleared from DB');
   } catch (err) {
     console.error(err);
   } finally {
