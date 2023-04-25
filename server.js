@@ -58,6 +58,22 @@ async function postBook(req, res, next) {
 
 }
 
+app.delete('/books/:bookID', deleteBook);
+
+async function deleteBook(req, res, next){
+  try {
+    // console.log(req.params);
+    let id = req.params.bookID;
+
+    await Book.findByIdAndDelete(id);
+
+    res.status(200).send('Book was successfully deleted.')
+    
+  } catch (error) {
+    next(error)
+  }
+}
+
 app.get('*', (request, response) => {
   response.status(404).send('Not available');
 });
