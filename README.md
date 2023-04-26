@@ -36,8 +36,8 @@ This application uses `cors`, `dotenv`, `express` and `mongoose`.
 
 ## Credit and Collaborations
 
+- [Donna Ada](https://github.com/donnaada)  
 - [Michael "Ike" Steoger](https://github.com/IkeSteoger)  
-- [Donna Ada](https://github.com/donnaada)
 
 ## [Front End Repo](https://github.com/donnaada/can-of-books-frontend)
 

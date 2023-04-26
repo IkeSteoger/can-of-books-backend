@@ -37,7 +37,7 @@ app.get('/test', (request, response) => {
 })
 
 
-// *** END POINT TO RETRIEVE BOOKS ***
+// *** ENDPOINT TO RETRIEVE BOOKS ***
 app.get('/books', async (request, response, next) => {
   try {
     let allBooks = await Book.find({});
@@ -49,7 +49,7 @@ app.get('/books', async (request, response, next) => {
 });
 
 
-// *** END POINT TO CREATE A BOOK ***
+// *** ENDPOINT TO CREATE A BOOK ***
 app.post('/books', postBook);
 
 async function postBook(request, response, next){
@@ -65,7 +65,7 @@ async function postBook(request, response, next){
   }
 }
 
-// *** END POINT TO DELETE A BOOK ***
+// *** ENDPOINT TO DELETE A BOOK ***
 app.delete('/books/:bookID', deleteBook)
 
 async function deleteBook(request, response, next){
@@ -75,7 +75,25 @@ async function deleteBook(request, response, next){
 
     await Book.findByIdAndDelete(id);
 
-    response.status(200).send('Book deleted!');
+    response.status(200).send(`Book with the ID of ${id} was deleted!`);
+  } catch(error) {
+    next(error);
+  }
+}
+
+
+// *** ENDPOINT TO UPDATE A BOOK ***
+app.put('/books/:bookID', updateBook)
+
+async function updateBook(request, response, next){
+  // console.log(request.params)
+  try {
+    let id = request.params.bookID;
+    let bookData = request.body;
+
+    let updatedBook = await Book.findByIdAndUpdate(id, bookData, { new: true, overwrite: true });
+
+    response.status(200).send(updatedBook);
   } catch(error) {
     next(error);
   }
