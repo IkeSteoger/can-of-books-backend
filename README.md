@@ -1,8 +1,9 @@
 # Can of Books App
 
-**Author**: Ike Steoger & Donna Ada
+**Author**:  Donna Ada & Ike Steoger
 
-**Version**: 1.0.0 - setup repo, got base code working with mongoDB and a Book model
+**Version**: 1.1.0 - Book model is fully working CRUD.
+1.0.0 - setup repo, got base code working with mongoDB and a Book model
 
 ## Overview
 
@@ -18,6 +19,10 @@ This application uses `cors`, `dotenv`, `express` and `mongoose`.
 
 ## Change Log
 
+4-26-2023 - added a update method for our Book model
+
+4-25-2023 - added a create/delete method for our Book model
+
 4-24-2023 - repo created with base code from CodeFellows, added in some code & got mongoDB working
 
 ## Estimates
@@ -32,7 +37,13 @@ This application uses `cors`, `dotenv`, `express` and `mongoose`.
 >>Estimate of time needed to complete: 2 hours  
 >>Start time: 12pm  
 >>Finish time: 1pm  
->>Actual time needed to complete: 1 hour 
+>>Actual time needed to complete: 1 hour
+
+>Name of feature: Update (Book Model)
+>>Estimate of time needed to complete: 1 hour  
+>>Start time: 12pm  
+>>Finish time: 1pm  
+>>Actual time needed to complete: 1 hour
 
 ## Credit and Collaborations
 
